@@ -10,18 +10,34 @@ namespace TH2
     {
         static void Main(string[] args)
         {
-            int so;
-            Console.WriteLine("nhap so:");
-            so = Convert.ToInt16(Console.ReadLine());
-            if(so < 2)
+            int number = -1;
+            Console.WriteLine("Enter a number:");
+            number = int.Parse(Console.ReadLine());
+            if(number < 2)
             {
-                Console.WriteLine(so + " is not a prime");
-            }
-            else
+                Console.WriteLine($"{number} is not a prime");
+            }else
             {
                 int i = 2;
                 bool check = true;
-                while ()
+                while( i <= Math.Sqrt(number) )
+                {
+                    if(number % i == 0)
+                    {
+                        check = false;
+                        break;
+                    }
+                    i++;
+
+                }
+                if (check)
+                {
+                    Console.WriteLine($"{number} is a prime");
+                }
+                else
+                {
+                    Console.WriteLine($"{number} is not a prime");
+                }
             }
         }
     }
